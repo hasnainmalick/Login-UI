@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+.App{
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat';
+}
+.image{
+  margin-bottom: 72px;
+}
+
+/* default behaviour changing for place holder */
+::placeholder{
+  color:#fff;
+  font-family: 'Montserrat';
+}
+.inputWrapper{
+  width:300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+/* targeting input*/
+.inputWrapper input{
+  background-color: transparent;
+  border: none;
+  color:#fff;
+  /* box-sizing: border-box; */
+}
+/* changing default hover effect */
+.inputWrapper input:focus-visible{
+  outline: 0px !important;
+}
+
+/* directily targeting both */
+.inputWrapper input,button{
+  font-family: 'Montserrat';
+  height: 45px;
+  width: 100%;
+  
+  /* box-sizing: border-box; */
+}
+/* target the button */
+
+.inputWrapper button{
+  
+  color:#2148C0;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+}
+.inputWrapper button:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
+}
+.inputLogin{
+  margin-top: 43px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.forgotPassword{
+  color:#fff;
+  text-align: right;
+}
+.link{
+  text-decoration: none;
+  color:#fff;
+  text-align: left;
+}
+a{
+  text-decoration: none;
+  color:#fff;
+}
+.error{
+  color:red;
+  text-align: left;
+  margin-top: 0;
+}
