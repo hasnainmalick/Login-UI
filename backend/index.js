@@ -1,5 +1,6 @@
 const express = require("express");
-const User  =require("./models/userModel")
+const User  =require("./models/userModel");
+const bcrypt = require("bcryptjs")
 
 // authentication
 const jwt  = require("jsonwebtoken")
@@ -33,11 +34,11 @@ app.post('/', async(req,res) =>{
     console.log(req.body)
         const user = await User.findOne({
             email:req.body.email,
-            password:req.body.password
-        },
+            // password:req.body.password
+        })
+        const isPasswordValid = await bcrypt.compare(req.body.password, user.password);
         
-        )
-        if(user){
+        if(isPasswordValid){
             const token = jwt.sign({
                 email:user.email,
                 password:user.password
@@ -56,12 +57,13 @@ app.post('/', async(req,res) =>{
 // registration route
 app.post('/register', async(req,res)=>{
     // res.send("I am running");
-    console.log(req.body)
+    const newPassword = await bcrypt.hash(req.body.password, 10);
+    console.log(req.body, newPassword)
     try{
         const user = await User.create({
             name:req.body.name,
             email:req.body.email,
-            password:req.body.password
+            password: newPassword
         })
         res.json({status: 'ok'})
     }

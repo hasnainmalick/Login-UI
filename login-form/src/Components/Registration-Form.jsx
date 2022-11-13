@@ -6,7 +6,7 @@ import UserIcon from '../images/user.svg'
 import PasswordIcon from '../images/password.svg'
 
 function RegisrationForm() {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register,  formState: { errors } } = useForm();
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
@@ -32,7 +32,7 @@ function RegisrationForm() {
     }
     return (
         <div className='container'>
-            <form action='' onSubmit={handleSubmit(onSubmit)}>
+            <form action='' onSubmit={onSubmit}>
                 <div>
                     <img className="image" src={LoginUI} alt='Logo'/>
                     {/* <image src='../images/login_logo_outro.svg'/> */}

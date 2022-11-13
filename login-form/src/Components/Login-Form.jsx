@@ -29,12 +29,12 @@ function LoginForm() {
             )
         }
 
-        console.log(data);
+        // console.log(data);
         if(data.user){
             alert("Login SuccessFully");
             link();
         } else{
-            alert("Check email and password")
+            alert("Incorrect email and password")
         }
         setEmail("");
         setPassword("")        
